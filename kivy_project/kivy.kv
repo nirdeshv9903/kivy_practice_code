@@ -1,0 +1,278 @@
+##: import utils kivy.utils
+# <MyGrid>
+#     name:name
+#     age:age
+#     year:year
+
+#     GridLayout:
+#         cols:1
+#         size: root.width, root.height
+
+#         GridLayout:
+#             cols:2
+
+#             GridLayout:
+#                 cols:2
+               
+#                 Label:
+#                     text: "Name"
+#                 TextInput:
+#                     id:name
+#                     multiline:False
+#                 Label:
+#                     text: "Age"
+#                 TextInput:
+#                     id:age
+#                     multiline:False
+#                 Label:
+#                     text: "Year"
+#                 TextInput:
+#                     id:year
+#                     multiline:False
+#         Button:
+#             text: "Submit"
+#             font_size: 32
+#             on_press: root.press()
+#             background_color: utils.get_color_from_hex('#fa00df')
+
+########################################################################################
+# <Button>
+#     font_size: 32
+#     background_normal:''
+#     background_color: utils.get_color_from_hex('#cfcfcf')
+# <MyGrid>
+#     # background color of screen
+#     # canvas.before:
+#     #     Color:
+#     #         rgba:(0,0,1,1)
+#     #     Rectangle:
+#     #         size: self.size
+#     #         pos: self.pos
+#     BoxLayout:
+#         orientation:'vertical'
+#         size: root.width, root.height
+#         spacing: 20
+#         padding: 50
+
+#         Label:
+#             text:'Hello'
+#             font_size: 32
+#         TextInput:
+#             text:'Enter the Name'
+#             multiline: False
+#         Label:
+#             text:'Im hungry'
+#             font_size: 32
+#             background_color: (0,0,1,1)
+#             canvas.before:
+#                 Color:
+#                     rgba: self.background_color
+#                 Rectangle:
+#                     pos:self.pos
+#                     size: self.size
+#             # text color
+#             color: (0,1,0,1)
+#             bold: True
+#             italic: True
+#             outline_color: (0,0,0)
+#             outline_width: 2
+
+#         TextInput:
+#             multiline: False
+#         Button:
+#             text: "good way"
+#         Button:
+#             text: "hi bro"
+#             size_hint: (0.5, 0.5)
+#             pos_hint: {'center_x':0.5}
+#             background_color: (1,0,0,1)
+#             # widht: 100
+#             # height: 50
+######################################################################################
+# <MyGrid>
+#     BoxLayout:
+#         orientation:'vertical'
+#         size: root.width, root.height
+#         spacing: 20
+#         padding: 30
+#         Image:
+#             source: 'goku.jpg'
+#             allow_stretch:True
+#             keep_ratio:True
+#         Button:
+#             text: 'NIRDESH'
+##########################################################################################
+# <Button>
+#     font_size:32
+#     size_hint: (0.3,0.3)
+# <MyGrid>
+#     FloatLayout:
+#         size: root.width, root.height
+
+#         Button:
+#             text:"Top_left"
+#             # pos_hint {"x", "y", "top", "bottom", "left", "right"}
+#             pos_hint: {"x":0, "top":1}
+#         Button:
+#             text:"Top_right"
+#             pos_hint: {"x":0.7, "top":1}
+#         Button:
+#             text:"center"
+#             pos_hint: {"x":0.35, "y":0.35}
+#         Button:
+#             text:"Bottom_left"
+#             pos_hint: {"x":0}
+#         Button:
+#             text:"Bottom_Right"
+#             pos_hint: {"x":0.7, "bottom":1}
+###########################################################################################
+# <MyGrid>
+#     BoxLayout:
+#         orientation:'vertical'
+#         size: root.width, root.height
+#         Label:
+#             id:name_label
+#             text:'Hi What your name !'
+#             font_size: 32
+#         TextInput:
+#             id:name_input
+#             multiline: False
+#             size_hint: (1, 0.5)
+#         Button:
+#             text:'Submit'
+#             size_hint: (1, 0.5)
+#             font_size: 32
+#             on_press: root.press()
+#########################################################################################
+<MyGrid>
+    BoxLayout:
+        size: root.width, root.height
+        orientation: 'vertical'
+        TextInput:
+            id: calc
+            text:'0'
+            halign:'right'
+            font_size: 65
+            size_hint: (1,0.15)
+        GridLayout:
+            cols:4
+            rows:5
+            #cols
+            Button:
+                text:'%'
+                font_size:32
+                size_hint: (0.2,0.2)
+            Button:
+                id: clear
+                text:'c'
+                font_size:32
+                size_hint: (0.2,0.2)
+                on_press: root.Cls()
+            Button:
+                id: remove
+                text:u"\u00AB"
+                font_size:32
+                size_hint: (0.2,0.2)
+                on_press: root.remove()
+            Button:
+                text:'/'
+                font_size:32
+                size_hint: (0.2,0.2)
+                on_press: root.oprations("/")
+            #rows
+            Button:
+                text:'7'
+                font_size:32
+                size_hint: (0.2,0.2)
+                background_color: (157/255,157/255,157/255)
+                on_press: root.button_fun(7)
+            Button:
+                text:'8'
+                font_size:32
+                size_hint: (0.2,0.2)
+                background_color: (157/255,157/255,157/255)
+                on_press: root.button_fun(8)
+            Button:
+                text:'9'
+                font_size:32
+                size_hint: (0.2,0.2)
+                background_color: (157/255,157/255,157/255)
+                on_press: root.button_fun(9)
+            Button:
+                text:'*'
+                font_size:32
+                size_hint: (0.2,0.2)
+                on_press: root.oprations("*")
+
+            Button:
+                text:'4'
+                font_size:32
+                size_hint: (0.2,0.2)
+                background_color: (157/255,157/255,157/255)
+                on_press: root.button_fun(4)
+            Button:
+                text:'5'
+                font_size:32
+                size_hint: (0.2,0.2)
+                background_color: (157/255,157/255,157/255)
+                on_press: root.button_fun(5)
+            Button:
+                text:'6'
+                font_size:32
+                size_hint: (0.2,0.2)
+                background_color: (157/255,157/255,157/255)
+                on_press: root.button_fun(6)
+            Button:
+                text:'-'
+                font_size:32
+                size_hint: (0.2,0.2)
+                on_press: root.oprations("-")
+
+            Button:
+                text:'1'
+                font_size:32
+                size_hint: (0.2,0.2)
+                background_color: (157/255,157/255,157/255)
+                on_press: root.button_fun(1)
+            Button:
+                text:'2'
+                font_size:32
+                size_hint: (0.2,0.2)
+                background_color: (157/255,157/255,157/255)
+                on_press: root.button_fun(2)
+            Button:
+                text:'3'
+                font_size:32
+                size_hint: (0.2,0.2)
+                background_color: (157/255,157/255,157/255)
+                on_press: root.button_fun(3)
+            Button:
+                text:'+'
+                font_size:32
+                size_hint: (0.2,0.2)
+                on_press: root.oprations("+")
+
+            Button:
+                text:'+/-'
+                font_size:32
+                size_hint: (0.2,0.2)
+                background_color: (157/255,157/255,157/255)
+                on_press: root.pos_neg()
+            Button:
+                text:'0'
+                font_size:32
+                size_hint: (0.2,0.2)
+                background_color: (157/255,157/255,157/255)
+                on_press: root.button_fun(0)
+            Button:
+                text:'.'
+                font_size:32
+                size_hint: (0.2,0.2)
+                background_color: (157/255,157/255,157/255)
+                on_press: root.dot()
+            Button:
+                text:'='
+                font_size:32
+                size_hint: (0.2,0.2)
+                on_press: root.equals()
+            
